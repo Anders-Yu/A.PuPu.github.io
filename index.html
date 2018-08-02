@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A.PuPu手工烘焙坊</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            padding-top: 86px;
+            margin: 0;
+            font-family: Helvetica Neue, Helvetica, sans-serif, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+
+
+        #section1 {
+            padding: 50px 0;
+            background-color: #FFCFE3;
+        }
+
+        #section2 {
+            padding: 50px 0;
+        }
+
+        #section2 .card {
+            margin-bottom: 30px;
+        }
+
+        .card-body {
+            padding: 0;
+        }
+
+        .card-title {
+            text-align: center;
+            line-height: 36px;
+            margin: 0;
+        }
+
+        #section3 {
+            padding: 50px 0;
+            background-color: #FFCFE3;
+        }
+
+
+
+        /* 影片輪播 */
+
+        .gallery-top {
+            height: 80%;
+            width: 100%;
+        }
+
+        .gallery-thumbs {
+            height: 20%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .gallery-thumbs .swiper-slide {
+            width: 15%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .gallery-thumbs .swiper-slide-active {
+            opacity: 1;
+        }
+
+        .video {
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center;
+            display: flex;
+        }
+
+        /* 結束 */
+
+        #section4 {
+            padding: 50px 0;
+        }
+
+
+
+        #section4 .card {
+            margin: 0;
+            padding: 0;
+        }
+
+        #section5 {
+            padding: 50px 0;
+            background-color: #FFCFE3;
+        }
+
+        .section5Right {
+            margin: 30px auto 0 auto;
+        }
+
+        /* nav */
+
+        .navbar-nav li {
+            padding: 5px 18px;
+            margin-left: 15px;
+            margin-bottom: 5px;
+
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white;
+            padding: 0;
+        }
+
+        .navbar-nav {
+            margin: 10px 0 5px 0;
+        }
+
+        .nav-link {
+            line-height: 40px;
+        }
+
+        .navbar-nav li.logo {
+            background-color: transparent;
+        }
+
+        .navbar-brand {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-right: 0;
+        }
+
+
+
+        /* 最上面輪播 */
+
+        .carousel {
+            width: 100%;
+            height: 430px;
+            margin: 0 auto;
+            margin-top: 86px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        /* 結束 */
+
+        /* 卡片 */
+
+        /* 怎麼做的 */
+
+        /* 和ㄚ噗噗說話 */
+
+        .talk {
+            width: 100%;
+            height: 695px;
+            background-color: bisque;
+            padding-top: 55px;
+        }
+
+        .title {
+            width: 40%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 20px;
+            padding: 5px 10px;
+            color: #3C0804;
+        }
+
+        .FB {
+            width: 100%;
+        }
+
+        .btn-link {
+            color: #801541;
+        }
+
+        .btn-link:hover {
+            color: #801541;
+        }
+
+        .card-header {
+            background-color: #F3b1ca;
+        }
+
+        #backTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            border-radius: 50%;
+            padding: 0;
+        }
+
+
+        #footer {
+            max-width: 100%;
+            height: 130px;
+            background-color: #3C0804;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            body {
+                padding-top: 56px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導覽列 -->
+    <div id="nav">
+        <nav class="navbar navbar-expand-lg navbar fixed-top navbar-dark" style="background-color: #3C0804;">
+            <div class="container ">
+                <a class="navbar-brand d-block d-lg-none" href="#Logo">
+                    <img src="img/LOGO.png" height="40px" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class=" logo nav-item d-none d-lg-block ">
+                            <a class="navbar-brand " href="" id="Logo">
+                                <img src="img/LOGO.png" height="40px" alt="">
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" id="section2_go" href="#section2_anchor">買餅乾
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section3_anchor">怎麼做的</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section4_anchor">關於ㄚ噗噗</a>
+                        </li>
+                        <li class="nav-item buy">
+                            <a class="nav-link " href="#section5">和ㄚ噗噗說話</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- 結束 -->
+    <div id="section1">
+        <div class="container">
+            <!-- 輪播 -->
+            <div class="slide">
+                <!-- Swiper -->
+                <div class="swiper-container" id="slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/Slide1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/slide2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-pagination swiper-pagination-white"></div>
+                </div>
+            </div>
+            <!-- 結束 -->
+        </div>
+    </div>
+    <div id="section2_anchor" style="transform: translateY(-85px)"></div>
+    <div id="section2">
+        <div class="container">
+            <!-- 買餅乾 -->
+            <div class="title mb-5">買餅乾</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-01.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">精緻造型餅乾</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-02.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">現烤杏仁餅乾</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-03.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">限量起司餅乾</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-04.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">新鮮牛奶餅乾</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-05.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">限量手工布丁</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-06.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">現烤香酥波羅</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-07.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">古早味蔥花捲</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/網站用圖/B-商品圖-08.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">超值肉鬆麵包</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="section3_anchor" style="transform: translateY(-85px)"></div>
+    <div id="section3">
+        <div class="container">
+            <!-- 怎麼做的 -->
+            <div class="title mb-5">怎麼做的</div>
+            <!-- 影片 -->
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/DDO_aCkivxU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe class="video" height="425" src="https://www.youtube.com/embed/pRjqxBgElxE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img width="100%" src="img/1533105157905.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- 結束 -->
+
+        </div>
+    </div>
+    <div id="section4_anchor" style="transform: translateY(-86px)"></div>
+    <div id="section4">
+        <div class="container">
+            <!-- 關於ㄚ噗噗 -->
+            <div class="title mb-5">關於ㄚ噗噗</div>
+
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Q: 請問你們平常都在那裡擺攤呢?
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            A: 我們沒有錢買攤位QQ
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                Q: 請問你們的店面在哪裡呢?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            A: 你可以自己上網查唷! ^_^
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                Q: 請問你們有幾位烘焙師傅呢?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            A: 只有老娘一個人唷! ^_^
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingfour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false"
+                                aria-controls="collapsefour">
+                                Q: 請問你們只有賣餅乾嗎?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                        <div class="card-body">
+                            A: 老娘宣傳海報就有麵包 你是目幹嗎? ^_^
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingfive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false"
+                                aria-controls="collapsefive">
+                                Q: 請問你們什麼時段會到火車站擺攤呢?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                        <div class="card-body">
+                            A: 恁祖母心情好就擺攤啦! ^_^
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="section5">
+        <div class="container">
+            <!-- 和ㄚ噗噗說話 -->
+            <div class="title">和ㄚ噗噗說話</div>
+            <div class="section5Right">
+                <iframe class="FB" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fapupucookie%2Fposts%2F1672912079662456&width=500"
+                    height="207" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+                    allow="encrypted-media"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <button id="backTop">
+        <img src="img/go top.png" alt="">
+    </button>
+
+
+
+    <div id="footer"></div>
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // 最上面輪播
+        var swiper = new Swiper('#slide', {
+            loop: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        // 結束
+        // 影片區的輪播
+        var galleryTop = new Swiper('.gallery-top', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+        });
+        galleryTop.controller.control = galleryThumbs;
+        galleryThumbs.controller.control = galleryTop;
+
+        var section1_height = $("#section1").outerHeight();
+
+        $("#btn").click(function () {
+            $("#section1").animate({
+                "font-size": "34px",
+                "color": "red"
+            });
+        });
+
+
+        $(window).scroll(function () {
+            //取得目前捲軸,捲動高度
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > section1_height) {
+                //如果捲動高度大於300
+                $("#backTop").show();
+            } else {
+                //否則就會執行以下程式碼
+                $("#backTop").hide();
+            }
+        });
+
+        $("#backTop").click(function () {
+            //按鈕按下時，回到最上
+            $("html,body").animate({
+                scrollTop: 0
+            }, 'slow');
+        });
+
+        $("#Logo").click(function () {
+            event.preventDefault();
+            //按鈕按下時，回到最上
+            $("html,body").animate({
+                scrollTop: 0
+            }, 'slow');
+        });
+
+        $(document).on('click', 'a[href^="#"]', function (event) {
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+
+
+        });
+    </script>
+</body>
+
+</html>
